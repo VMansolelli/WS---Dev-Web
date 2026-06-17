@@ -1,0 +1,54 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f6f8;
+  color: #222;
+  margin: 0;
+  padding: 20px;
+}
+
+.pagina {
+  width: 80%;
+  margin: auto;
+
+  background-color: white;
+  padding: 30px;
+
+  border-radius: 12px;
+  box-shadow: 0 4px 12px gray;
+}
+
+h1 {
+  color: #111827;
+  font-size: 36px;
+}
+
+h2 {
+  color: #374151;
+  margin-top: 28px;
+}
+
+p,
+li {
+  line-height: 1.6;
+}
+
+img {
+  width: 300px;
+  height: 200px;
+  border-radius: 12px;
+  margin-top: 10px;
+}
+
+a {
+  color: blue;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+strong {
+  color: #111827;
+}
+
+em {
+  color: #6b7280;
+}
