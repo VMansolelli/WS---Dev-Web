@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Níveis de Especificidade</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Níveis de Especificidade</h1>
+<p>Apenas a tag</p>
+<p class="texto">Vence a classe</p>
+<p class="texto" id="principal">Vence o ID</p>
+<p class="texto" id="principal" style="color: orange">Vence o CSS inline</p>
+<p class="texto importante" id="principal" style="color: orange">Vence a classe com !important</p>
+  </body>
+</html>

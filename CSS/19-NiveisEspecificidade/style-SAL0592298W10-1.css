@@ -1,0 +1,23 @@
+/* Efeito cascata */
+p {
+  color: pink;
+}
+p {
+  color: coral;
+}
+/* Menor prioridade */
+p {
+  color: blue;
+}
+/* Prioridade maior que elemento */
+.texto {
+  color: green;
+}
+/* Prioridade maior que classe */
+#principal {
+  color: red;
+}
+/* !important Prioridade maior que todos*/
+.importante {
+  color: purple !important;
+}
