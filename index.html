@@ -1,38 +1,84 @@
 <!doctype html>
-<html lang="pt-br">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Otaku+</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-    <!--Importação fonte principal e secundaria-->
-    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet" />
+      .container {
+        background-color: navy;
+        width: 600px;
+        margin: 5px;
+        padding: 10px;
+      }
 
-    <link rel="stylesheet" href="style.css" />
+      .item {
+        background-color: coral;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        text-align: center;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: 150px 150px 150px;
+        grid-template-rows: 100px 100px;
+        gap: 20px;
+      }
+
+      .inline-grid {
+        display: inline-grid;
+        grid-template-columns: 120px 120px;
+        grid-template-rows: 80px 80px;
+        gap: 10px;
+      }
+
+      .gap-separado {
+        display: grid;
+        grid-template-columns: 150px 150px 150px;
+        grid-template-rows: 100px 100px;
+        row-gap: 30px;
+        column-gap: 10px;
+      }
+    </style>
   </head>
   <body>
-    <nav>
-      <div class="logo">
-        <a href="./index.html">OTAKU<span>+</span></a>
-      </div>
-      <ul class="nav-links">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Catálogo</a></li>
-        <li><a href="#">Preços</a></li>
-      </ul>
-      <div class="nav-login">
-        <a class="btn-login" href="#">Entrar</a>
-        <button class="btn-nav">Começar</button>
-      </div>
-    </nav>
-
-    <section class="hero">
-      <h1>Assista Anime<br /><span>Sem Limites</span></h1>
-      <p>Com o <strong>Kombro</strong>, você aproveita títulos incríveis e inúmeros canais por um único preço, 
-        em qualquer lugar, em qualquer tela, a qualquer hora.</p>
-      <a href="#" class="btn-hero">Começar Gratuitamente</a>
-      <p class="hero-obs">7 dias grátis · Cancele quando quiser</p>
-    </section>
-    <div class="divisor"></div>
+    <h1>Display Grid</h1>
+    <h2>Grid</h2>
+    <!-- Container em grid ocupando a largura da linha -->
+    <div class="container grid">
+      <div class="item">Item 1</div>
+      <div class="item">Item 2</div>
+      <div class="item">Item 3</div>
+      <div class="item">Item 4</div>
+      <div class="item">Item 5</div>
+      <div class="item">Item 6</div>
+    </div>
+    <h2>Inline Grid</h2>
+    <!-- Container inline-grid ocupa somente o tamanho do conteúdo -->
+    <div class="container inline-grid">
+      <div class="item">Item 1</div>
+      <div class="item">Item 2</div>
+      <div class="item">Item 3</div>
+      <div class="item">Item 4</div>
+      <div class="item">Item 5</div>
+      <div class="item">Item 6</div>
+    </div>
+    <h2>Gap para colunas e linhas</h2>
+    <!-- Espaçamento diferente entre linhas e colunas -->
+    <div class="container gap-separado">
+      <div class="item">Linha 1</div>
+      <div class="item">Linha 1</div>
+      <div class="item">Linha 1</div>
+      <div class="item">Linha 2</div>
+      <div class="item">Linha 2</div>
+      <div class="item">Linha 2</div>
+    </div>
   </body>
 </html>
