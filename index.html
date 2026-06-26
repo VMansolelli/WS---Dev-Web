@@ -1,84 +1,230 @@
-<!doctype html>
-<html>
-  <head>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Faz o site se adaptar ao tamanho da tela -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Responsividade</title>
+
     <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-      .container {
-        background-color: navy;
-        width: 600px;
-        margin: 5px;
-        padding: 10px;
-      }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
 
-      .item {
-        background-color: coral;
-        color: #fff;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 10px;
-        text-align: center;
-      }
+        img {
+            width: 100%;
+            display: block;
+        }
 
-      .grid {
-        display: grid;
-        grid-template-columns: 150px 150px 150px;
-        grid-template-rows: 100px 100px;
-        gap: 20px;
-      }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
 
-      .inline-grid {
-        display: inline-grid;
-        grid-template-columns: 120px 120px;
-        grid-template-rows: 80px 80px;
-        gap: 10px;
-      }
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-      .gap-separado {
-        display: grid;
-        grid-template-columns: 150px 150px 150px;
-        grid-template-rows: 100px 100px;
-        row-gap: 30px;
-        column-gap: 10px;
-      }
+        header h1 {
+            font-size: 28px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #aaa;
+            text-decoration: underline;
+        }
+
+        main {
+            max-width: 900px;
+            min-height: 320px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        main h2 {
+            margin-bottom: 20px;
+        }
+
+        .conteudo {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .texto,
+        .imagem {
+            flex: 1;
+        }
+
+        .texto p {
+            margin-bottom: 15px;
+        }
+
+        /* Esconde o checkbox usado para abrir o menu */
+        #menu-toggle {
+            display: none;
+        }
+
+        /* Botão hambúrguer */
+        .hamburguer {
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .hamburguer span {
+            width: 30px;
+            height: 3px;
+            background-color: #fff;
+            border-radius: 4px;
+        }
+
+        /* Celular */
+        @media (max-width: 576px) {
+            header {
+                background-color: navy;
+                flex-wrap: wrap;
+            }
+
+            .hamburguer {
+                display: flex;
+            }
+
+            nav {
+                width: 100%;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                gap: 8px;
+                margin-top: 15px;
+                text-align: center;
+            }
+
+            #menu-toggle:checked ~ nav ul {
+                display: flex;
+            }
+
+            .conteudo {
+                flex-direction: column;
+            }
+        }
+
+        /* Tablet pequeno */
+        @media (min-width: 577px) and (max-width: 768px) {
+            header {
+                background-color: tomato;
+            }
+
+            .conteudo {
+                flex-direction: row;
+            }
+        }
+
+        /* Tablet grande */
+        @media (min-width: 769px) and (max-width: 992px) {
+            header {
+                background-color: green;
+            }
+
+            .conteudo {
+                flex-direction: row;
+            }
+        }
+
+        /* Desktop */
+        @media (min-width: 993px) and (max-width: 1200px) {
+            header {
+                background-color: pink;
+            }
+        }
     </style>
-  </head>
-  <body>
-    <h1>Display Grid</h1>
-    <h2>Grid</h2>
-    <!-- Container em grid ocupando a largura da linha -->
-    <div class="container grid">
-      <div class="item">Item 1</div>
-      <div class="item">Item 2</div>
-      <div class="item">Item 3</div>
-      <div class="item">Item 4</div>
-      <div class="item">Item 5</div>
-      <div class="item">Item 6</div>
-    </div>
-    <h2>Inline Grid</h2>
-    <!-- Container inline-grid ocupa somente o tamanho do conteúdo -->
-    <div class="container inline-grid">
-      <div class="item">Item 1</div>
-      <div class="item">Item 2</div>
-      <div class="item">Item 3</div>
-      <div class="item">Item 4</div>
-      <div class="item">Item 5</div>
-      <div class="item">Item 6</div>
-    </div>
-    <h2>Gap para colunas e linhas</h2>
-    <!-- Espaçamento diferente entre linhas e colunas -->
-    <div class="container gap-separado">
-      <div class="item">Linha 1</div>
-      <div class="item">Linha 1</div>
-      <div class="item">Linha 1</div>
-      <div class="item">Linha 2</div>
-      <div class="item">Linha 2</div>
-      <div class="item">Linha 2</div>
-    </div>
-  </body>
+</head>
+
+<body>
+
+    <header>
+        <h1>Responsividade</h1>
+
+        <input type="checkbox" id="menu-toggle">
+
+        <label for="menu-toggle" class="hamburguer">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Serviços</a></li>
+                <li><a href="#">Sobre</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Conteúdo</h2>
+
+        <section class="conteudo">
+            <div class="texto">
+                <p>
+                    A responsividade permite que uma página se adapte a diferentes
+                    tamanhos de tela, melhorando a experiência do usuário em celulares,
+                    tablets e computadores.
+                </p>
+
+                <p>
+                    Com CSS, podemos ajustar menus, imagens, larguras e espaçamentos
+                    conforme o dispositivo utilizado.
+                </p>
+            </div>
+
+            <div class="imagem">
+                <picture>
+                    <source 
+                        srcset="https://placehold.co/576x320?text=Imagem+Pequena" 
+                        media="(max-width: 576px)"
+                    >
+
+                    <source 
+                        srcset="https://placehold.co/992x500?text=Imagem+Media" 
+                        media="(max-width: 992px)"
+                    >
+
+                    <img 
+                        src="https://placehold.co/1200x600?text=Imagem+Grande" 
+                        alt="Exemplo de imagem responsiva"
+                    >
+                </picture>
+            </div>
+        </section>
+    </main>
+
+</body>
 </html>
