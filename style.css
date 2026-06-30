@@ -1,0 +1,153 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+
+
+img {
+  width: 100%;      /* imagem acompanha o container */
+  display: block;  /* remove espaço fantasma embaixo */
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  font-size: 28px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #aaa;
+  text-decoration: underline;
+}
+
+main {
+  max-width: 900px;
+  min-height: 320px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+main h2 {
+  margin-bottom: 20px;
+}
+
+.conteudo {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+/*Deixa os itens com o mesmo espaço disponivel*/
+.texto,
+.imagem {
+  flex: 1;
+}
+
+.texto p {
+  margin-bottom: 15px;
+}
+
+/* Esconde o checkbox usado para abrir o menu */
+#menu-toggle {
+  display: none;
+}
+
+/* Botão hambúrguer */
+.hamburguer {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.hamburguer span {
+  width: 30px;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 4px;
+}
+
+/* Celular */
+@media (max-width: 576px) {
+  header {
+    background-color: navy;
+    flex-wrap: wrap;
+  }
+
+  .hamburguer {
+    display: flex;
+  }
+
+  nav {
+    width: 100%;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 15px;
+    text-align: center;
+  }
+
+  #menu-toggle:checked ~ nav ul {
+    display: flex;
+  }
+
+  .conteudo {
+    flex-direction: column;
+  }
+}
+
+/* Tablet pequeno */
+@media (min-width: 577px) and (max-width: 768px) {
+  header {
+    background-color: tomato;
+  }
+
+  .conteudo {
+    flex-direction: row;
+  }
+}
+
+/* Tablet grande */
+@media (min-width: 769px) and (max-width: 992px) {
+  header {
+    background-color: green;
+  }
+
+  .conteudo {
+    flex-direction: row;
+  }
+}
+
+/* Desktop */
+@media (min-width: 993px) and (max-width: 1200px) {
+  header {
+    background-color: pink;
+  }
+}
